@@ -1,0 +1,40 @@
+
+<div class="body">
+
+    <h1>Green Leaves</h1>
+    <!--Nombre-->
+    <mat-form-field appearance="fill">
+        <mat-label>Nombre</mat-label>
+        <input matInput required>
+    </mat-form-field>
+    <!--Email-->
+    <mat-form-field class="example-full-width">
+        <mat-label>Email</mat-label>
+        <input type="email" matInput [formControl]="emailFormControl" [errorStateMatcher]="matcher" placeholder="Ejemplo a@a.com">
+        <mat-error *ngIf="emailFormControl.hasError('email') && !emailFormControl.hasError('required')"> El correo no es valido </mat-error>
+        <mat-error *ngIf="emailFormControl.hasError('required')"> El email es <strong>obligatorio</strong> </mat-error>
+    </mat-form-field>
+    <!--Teléfono-->
+    <mat-form-field appearance="fill">
+        <mat-label>Teléfono</mat-label>
+        <input matInput>
+    </mat-form-field>
+    <!--Fecha-->
+    <mat-form-field appearance="fill">
+        <mat-label>Fecha (MM/DD/YYYY)</mat-label>
+        <input matInput [matDatepicker]="picker">
+        <mat-datepicker-toggle matIconSuffix [for]="picker"></mat-datepicker-toggle>
+        <mat-datepicker #picker></mat-datepicker>
+    </mat-form-field>
+    <!--Ciudad-->
+    <mat-form-field appearance="fill">
+        <mat-label>Ciudad y Estado</mat-label>
+        <mat-select>
+            <mat-option value="one">First option</mat-option>
+            <mat-option value="two">Second option</mat-option>
+        </mat-select>
+    </mat-form-field>
+    <!--Enviar-->
+    <button mat-flat-button color="primary">Enviar</button>
+</div>
+
