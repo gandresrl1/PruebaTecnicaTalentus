@@ -5,25 +5,7 @@ VisualStudioVersion = 17.4.33205.214
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PruebaTecnicaTalentus", "PruebaTecnicaTalentus\PruebaTecnicaTalentus.csproj", "{C09AD06A-A596-4879-AE1F-008F0A2AD06C}"
 EndProject
-Project("{E24C65DC-7377-472B-9ABA-BC803B73C61A}") = "Front-end", "Front-end\", "{CB29D912-9F29-4EF2-AEB3-E1FE50D96037}"
-	ProjectSection(WebsiteProperties) = preProject
-		TargetFrameworkMoniker = ".NETFramework,Version%3Dv4.0"
-		Debug.AspNetCompiler.VirtualPath = "/localhost_58934"
-		Debug.AspNetCompiler.PhysicalPath = "Front-end\"
-		Debug.AspNetCompiler.TargetPath = "PrecompiledWeb\localhost_58934\"
-		Debug.AspNetCompiler.Updateable = "true"
-		Debug.AspNetCompiler.ForceOverwrite = "true"
-		Debug.AspNetCompiler.FixedNames = "false"
-		Debug.AspNetCompiler.Debug = "True"
-		Release.AspNetCompiler.VirtualPath = "/localhost_58934"
-		Release.AspNetCompiler.PhysicalPath = "Front-end\"
-		Release.AspNetCompiler.TargetPath = "PrecompiledWeb\localhost_58934\"
-		Release.AspNetCompiler.Updateable = "true"
-		Release.AspNetCompiler.ForceOverwrite = "true"
-		Release.AspNetCompiler.FixedNames = "false"
-		Release.AspNetCompiler.Debug = "False"
-		VWDPort = "58934"
-	EndProjectSection
+Project("{54A90642-561A-4BB1-A94E-469ADEE60C69}") = "Talentus", "Talentus\Talentus.esproj", "{BFF7CEBD-E229-4E31-AA3E-926606C7D650}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -35,10 +17,12 @@ Global
 		{C09AD06A-A596-4879-AE1F-008F0A2AD06C}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{C09AD06A-A596-4879-AE1F-008F0A2AD06C}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{C09AD06A-A596-4879-AE1F-008F0A2AD06C}.Release|Any CPU.Build.0 = Release|Any CPU
-		{CB29D912-9F29-4EF2-AEB3-E1FE50D96037}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{CB29D912-9F29-4EF2-AEB3-E1FE50D96037}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{CB29D912-9F29-4EF2-AEB3-E1FE50D96037}.Release|Any CPU.ActiveCfg = Debug|Any CPU
-		{CB29D912-9F29-4EF2-AEB3-E1FE50D96037}.Release|Any CPU.Build.0 = Debug|Any CPU
+		{BFF7CEBD-E229-4E31-AA3E-926606C7D650}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{BFF7CEBD-E229-4E31-AA3E-926606C7D650}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{BFF7CEBD-E229-4E31-AA3E-926606C7D650}.Debug|Any CPU.Deploy.0 = Debug|Any CPU
+		{BFF7CEBD-E229-4E31-AA3E-926606C7D650}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{BFF7CEBD-E229-4E31-AA3E-926606C7D650}.Release|Any CPU.Build.0 = Release|Any CPU
+		{BFF7CEBD-E229-4E31-AA3E-926606C7D650}.Release|Any CPU.Deploy.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
