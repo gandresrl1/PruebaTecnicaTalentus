@@ -7,12 +7,12 @@ export class FormModel{
         this.email = "";
         this.phone = 0;
         this.date = "";
-        this.city = "";
+        this.idCity = "";
     }
   name: string;
   email: string;
   phone: number;
   date: string;
-  city: string;
+  idCity: string;
 
 }

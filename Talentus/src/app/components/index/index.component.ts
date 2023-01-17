@@ -28,7 +28,7 @@ export class IndexComponent {
       email: ['', Validators.required, Validators.email],
       phone: ['', Validators.required],
       date: ['', Validators.required],
-      city: ['', Validators.required],
+      idCity: ['', Validators.required],
     })
   }
   
@@ -42,7 +42,7 @@ export class IndexComponent {
     this.model.email = this.form.controls['email'].value;
     this.model.phone = this.form.controls['phone'].value;
     this.model.date = this.form.controls['date'].value;
-    this.model.city = this.form.controls['city'].value;
+    this.model.idCity = this.form.controls['idCity'].value;
     this.serviceIndex.manageForm(this.model).subscribe();
   }
 }

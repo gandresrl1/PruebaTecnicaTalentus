@@ -16,7 +16,7 @@ export class IndexServices {
             
     }
   manageForm(model: any) : Observable<any> {
-    return this.service.post('url', model);
+    return this.service.post('https://localhost:44337/api/Email', model);
   }
 
 }
