@@ -13,9 +13,15 @@ import { MatDatepickerModule } from '@angular/material/datepicker';
 import { MatNativeDateModule } from '@angular/material/core';
 import { MatSelectModule } from '@angular/material/select';
 import { MatButtonModule } from '@angular/material/button';
+import { MatToolbarModule } from '@angular/material/toolbar';
+import { MatIconModule } from '@angular/material/icon'
 
 //Componentes
 import { IndexComponent } from './components/index/index.component';
+import { FormModel } from 'src/models/form-Model';
+import { IndexServices } from 'src/services/index-services';
+import { HttpClientModule } from '@angular/common/http';
+import { ServiceControl } from 'src/services/service-control';
 
 
 @NgModule({
@@ -29,15 +35,21 @@ import { IndexComponent } from './components/index/index.component';
     MatSlideToggleModule,
     MatFormFieldModule,
     MatInputModule,
+    MatToolbarModule,
+    MatIconModule,
     BrowserModule,
     FormsModule,
     ReactiveFormsModule,
     MatDatepickerModule,
     MatNativeDateModule,
     MatSelectModule,
-    MatButtonModule
+    MatButtonModule,
+    HttpClientModule 
   ],
-  providers: [],
+  providers: [    
+    IndexServices,
+    ServiceControl
+  ],
   bootstrap: [AppComponent]
 })
-export class AppModule { }
+export class AppModule {  }

@@ -1,41 +1,55 @@
+<p>
+    <mat-toolbar class="custom-bar" style="min-width: fit-content;">
+      <span>Green Leaves</span>
+    </mat-toolbar>
+</p>
 
-<div class="body">
-    <form [formGroup]="form" (ngSubmit)="enviar()">
-        <h1>Green Leaves</h1>
-        <!--Nombre-->
-        <mat-form-field appearance="fill">
-            <mat-label>Nombre</mat-label>
-            <input matInput formControlName="name">
-        </mat-form-field>
-        <!--Email-->
-        <mat-form-field class="example-full-width">
-            <mat-label>Email</mat-label>
-            <input type="email" matInput  placeholder="Ejemplo a@a.com" formControlName="mail">
-            <!-- <mat-error *ngIf="emailFormControl.hasError('email') && !emailFormControl.hasError('required')"> El correo no es valido </mat-error>
-            <mat-error *ngIf="emailFormControl.hasError('required')"> El email es <strong>obligatorio</strong> </mat-error> -->
-        </mat-form-field>
-        <!--Teléfono-->
-        <mat-form-field appearance="fill">
-            <mat-label>Teléfono</mat-label>
-            <input matInput formControlName="phone">
-        </mat-form-field>
-        <!--Fecha-->
-        <mat-form-field appearance="fill">
-            <mat-label>Fecha (MM/DD/YYYY)</mat-label>
-            <input matInput [matDatepicker]="picker" formControlName="date">
-            <mat-datepicker-toggle matIconSuffix [for]="picker"></mat-datepicker-toggle>
-            <mat-datepicker #picker></mat-datepicker>
-        </mat-form-field>
-        <!--Ciudad-->
-        <mat-form-field appearance="fill">
-            <mat-label>Ciudad y Estado</mat-label>
-            <mat-select formControlName="city">
+    <form [formGroup]="form" (ngSubmit)="sendForm()">
+        <div fxLayout="column" fxLayoutAlign="center center">
+          <div fxFlex="100%">
+            <mat-form-field appearance="outline" class="form-field">
+              <mat-label>Name</mat-label>
+              <input matInput formControlName="name" name="name">
+            </mat-form-field>
+          </div>
+          <div fxFlex="100%">
+            <mat-form-field appearance="outline" class="form-field">
+              <mat-label>Email</mat-label>
+              <input matInput formControlName="email" name="email" required type="email" [errorStateMatcher]="matcher" placeholder="Ex. pat@example.com" pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,}$">
+              <mat-error *ngIf="form.hasError('email') && !form.hasError('required')">
+                Please enter a valid email address
+              </mat-error>
+              <mat-error *ngIf="form.hasError('required')">
+                Email is <strong>required</strong>
+              </mat-error>
+            </mat-form-field>
+          </div>
+          <div fxFlex="100%">
+            <mat-form-field appearance="outline" class="form-field">
+              <mat-label>Phone</mat-label>
+              <input matInput formControlName="phone" name="phone" pattern="[.#+0-9]{8,}$">
+            </mat-form-field>
+          </div>
+          <div fxFlex="100%">
+            <mat-form-field appearance="outline" class="form-field">
+              <mat-label>Date</mat-label>
+              <input matInput [matDatepicker]="picker" formControlName="date" name="date">  
+              <mat-datepicker-toggle matIconSuffix [for]="picker"></mat-datepicker-toggle>
+              <mat-datepicker #picker></mat-datepicker>            
+            </mat-form-field>
+          </div>
+          <div fxFlex="100%">
+            <mat-form-field appearance="outline" class="form-field">
+              <mat-label>City</mat-label>
+              <input matInput formControlName="city" name="city">
+              <mat-select formControlName="city">
                 <mat-option value="one">First option</mat-option>
                 <mat-option value="two">Second option</mat-option>
             </mat-select>
-        </mat-form-field>
-        <!--Enviar-->
-        <button type="submit" mat-flat-button color="primary">Enviar</button>
+            </mat-form-field>
+          </div>
+          <div fxFlex="100%">
+              <button mat-stroked-button type="submit">Register<mat-icon>chevron_right</mat-icon></button>
+          </div>
+        </div>
     </form>
-</div>
-

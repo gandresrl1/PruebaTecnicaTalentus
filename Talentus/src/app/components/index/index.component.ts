@@ -2,6 +2,8 @@ import { validateHorizontalPosition } from '@angular/cdk/overlay';
 import { Component } from '@angular/core';
 import { FormBuilder, FormGroup, FormControl, FormGroupDirective, NgForm, Validators } from '@angular/forms';
 import { ErrorStateMatcher } from '@angular/material/core';
+import { FormModel } from 'src/models/form-Model';
+import { IndexServices } from 'src/services/index-services';
  
 /** Error when invalid control is dirty, touched, or submitted. */
 export class MyErrorStateMatcher implements ErrorStateMatcher {
@@ -18,20 +20,29 @@ export class MyErrorStateMatcher implements ErrorStateMatcher {
 })
 export class IndexComponent {
   form: FormGroup;
-
-  constructor(private formBuilder: FormBuilder) {
+  model: FormModel = new FormModel;
+  matcher = new MyErrorStateMatcher();
+  constructor(private formBuilder: FormBuilder, private serviceIndex: IndexServices) {
     this.form = this.formBuilder.group({
       name: ['', Validators.required],
-      mail: ['', Validators.required],
+      email: ['', Validators.required, Validators.email],
       phone: ['', Validators.required],
       date: ['', Validators.required],
       city: ['', Validators.required],
     })
   }
-  // emailFormControl = new FormControl('', [Validators.required, Validators.email]);
-  // matcher = new MyErrorStateMatcher();
-
+  
   enviar(){
     console.log(this.form);
+  }
+
+  sendForm(){
+    console.log(this.form);
+    this.model.name = this.form.controls['name'].value;
+    this.model.email = this.form.controls['email'].value;
+    this.model.phone = this.form.controls['phone'].value;
+    this.model.date = this.form.controls['date'].value;
+    this.model.city = this.form.controls['city'].value;
+    this.serviceIndex.manageForm(this.model).subscribe();
   }
 }
