@@ -35,7 +35,6 @@ import { IndexComponent } from './components/index/index.component';
     MatDatepickerModule,
     MatNativeDateModule,
     MatSelectModule,
-    ReactiveFormsModule,
     MatButtonModule
   ],
   providers: [],
